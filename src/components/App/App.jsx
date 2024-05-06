@@ -43,14 +43,14 @@ function App() {
     window.localStorage.setItem("savedData", JSON.stringify(data))
   )
 
-  const visibileTasks = data.filter((personData) => personData.name.toLocaleLowerCase().includes(filter.toLocaleLowerCase()));
+  const filteredContacts = data.filter((personData) => personData.name.toLocaleLowerCase().includes(filter.toLocaleLowerCase()));
 
   return (
     <div>
       <h1>Phonebook</h1>
       <ContactForm handleSubmit={addContact} />
       <SearchBox value={filter} handleSearchBox={setFilter} />
-      <ContactList contactData={visibileTasks} deleteContact={deleteContact} />
+      <ContactList contactData={filteredContacts} deleteContact={deleteContact} />
     </div>
   );
 }

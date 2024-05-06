@@ -1,4 +1,4 @@
-import ContactListItem from "./ContactListItem";
+import Contact from "../Contact/Contact";
 import { nanoid } from 'nanoid'
 
 function ContactList({ contactData, deleteContact }) {
@@ -9,7 +9,7 @@ function ContactList({ contactData, deleteContact }) {
                     const id = contact.id ? contact.id : nanoid();
 
                     return <li key={id}>
-                        <ContactListItem data={contact} onDelete={deleteContact} />
+                        <Contact data={contact} onDelete={deleteContact} />
                     </li>
                 }))}
             </ul>
